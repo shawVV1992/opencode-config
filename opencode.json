@@ -1,0 +1,104 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "playwright": {
+      "type": "local",
+      "command": [
+        "npx.cmd",
+        "@playwright/mcp"
+      ],
+      "enabled": true
+    },
+    "github": {
+      "type": "local",
+      "command": [
+        "node",
+        "C:\\Users\\Administrator\\AppData\\Roaming\\npm-global\\node_modules\\@modelcontextprotocol\\server-github\\dist\\index.js"
+      ],
+      "enabled": true,
+      "timeout": 60000,
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "{env:GITHUB_TOKEN}"
+      }
+    },
+    "pencil": {
+      "command": [
+        "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Pencil\\resources\\app.asar.unpacked\\out\\mcp-server-windows-x64.exe",
+        "--app",
+        "desktop",
+        "--agent",
+        "openCodeCLI"
+      ],
+      "enabled": true,
+      "type": "local"
+    }
+  },
+  "provider": {
+    "bailian": {
+      "models": {
+        "qwen3.7-max": {
+          "name": "qwen3.7-max",
+          "limit": {
+            "context": 1000000,
+            "output": 8192
+          }
+        },
+        "qwen3.7-plus": {
+          "name": "qwen3.7-plus",
+          "limit": {
+            "context": 1000000,
+            "output": 8192
+          }
+        }
+      },
+      "name": "Bailian",
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "apiKey": "{env:BAILIAN_API_KEY}",
+        "baseURL": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+        "setCacheKey": true
+      }
+    },
+    "deepseek": {
+      "models": {
+        "deepseek-v4-flash": {
+          "name": "DeepSeek V4 Flash",
+          "limit": {
+            "context": 1048576,
+            "output": 8192
+          }
+        },
+        "deepseek-v4-pro": {
+          "name": "DeepSeek V4 Pro",
+          "limit": {
+            "context": 1048576,
+            "output": 8192
+          }
+        }
+      },
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "apiKey": "{env:DEEPSEEK_API_KEY}",
+        "baseURL": "https://api.deepseek.com/v1",
+        "setCacheKey": true
+      }
+    }
+  },
+  "plugin": [
+    "superpowers@git+https://github.com/obra/superpowers.git",
+    "oh-my-opencode-slim"
+  ],
+  "agent": {
+    "explore": {
+      "disable": true
+    },
+    "general": {
+      "disable": true
+    }
+  },
+  "lsp": true,
+  "instructions": [
+    "~/.config/opencode/instructions/language.md",
+    "~/.config/opencode/instructions/glossary.md"
+  ]
+}
