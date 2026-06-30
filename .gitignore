@@ -10,5 +10,3 @@ tui-preferences.jsonc
 bun.lock
 .vercel
 
-# setup-env (contains sensitive tokens) 敏感凭据
-setup-env.ps1
