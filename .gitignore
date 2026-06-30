@@ -1,6 +1,10 @@
+# Dependencies 依赖
 node_modules/
-package.json
-package-lock.json
-bun.lock
+
+# Local TUI state 本地TUI状态
+tui.json
+
+# Misc 其他
 *.bak
+bun.lock
 .vercel
