@@ -3,8 +3,12 @@ node_modules/
 
 # Local TUI state 本地TUI状态
 tui.json
+tui-preferences.jsonc
 
 # Misc 其他
 *.bak
 bun.lock
 .vercel
+
+# setup-env (contains sensitive tokens) 敏感凭据
+setup-env.ps1
