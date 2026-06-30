@@ -12,8 +12,8 @@
     "github": {
       "type": "local",
       "command": [
-        "node",
-        "C:\\Users\\Administrator\\AppData\\Roaming\\npm\\node_modules\\@modelcontextprotocol\\server-github\\dist\\index.js"
+        "npx.cmd",
+        "@modelcontextprotocol/server-github"
       ],
       "enabled": true,
       "timeout": 60000,
@@ -23,7 +23,7 @@
     },
     "pencil": {
       "command": [
-        "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Pencil\\resources\\app.asar.unpacked\\out\\mcp-server-windows-x64.exe",
+        "{env:PENCIL_MCP_PATH}",
         "--app",
         "desktop",
         "--agent",
@@ -86,7 +86,8 @@
   },
   "plugin": [
     "superpowers@git+https://github.com/obra/superpowers.git",
-    "oh-my-opencode-slim"
+    "oh-my-opencode-slim",
+    "@cortexkit/opencode-magic-context@latest"
   ],
   "agent": {
     "explore": {
@@ -98,7 +99,11 @@
   },
   "lsp": true,
   "instructions": [
-    "~/.config/opencode/instructions/language.md",
-    "~/.config/opencode/instructions/glossary.md"
-  ]
+    "instructions/language.md",
+    "instructions/glossary.md"
+  ],
+  "compaction": {
+    "auto": false,
+    "prune": false
+  }
 }
